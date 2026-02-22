@@ -94,6 +94,11 @@ class LinkedList:
             current = current.next
         return True
 
+    def isEmpty(self) -> bool:
+        if self.size > 0:
+            return False
+        return True
+
 
 if __name__ == "__main__":
     linkedList1 = LinkedList()
@@ -109,6 +114,7 @@ if __name__ == "__main__":
     print(linkedList1)
     linkedList1.insertTo(10, 3)
     print(linkedList1)
+    linkedList1.sizeOf()
     linkedList1.deleteTo(2)
     print(linkedList1)
     linkedList1.deleteTo(1)
@@ -119,3 +125,9 @@ if __name__ == "__main__":
         print("La valeur est présente")
     else:
         print("La valeur n'est pas présente")
+
+    if linkedList1.isEmpty():
+        print("La liste est bien vide")
+    else:
+        print("La liste n'est pas vide")
+    linkedList1.sizeOf()
