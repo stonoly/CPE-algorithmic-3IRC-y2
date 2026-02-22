@@ -29,7 +29,7 @@ class LinkedList:
         return text_to_return + " "
 
     def sizeOf(self) -> None:
-        print(f"{self.size}")
+        return self.size
 
     def insert(self, value: Any) -> None:
         nodeLast = self.Node(value)
@@ -55,7 +55,7 @@ class LinkedList:
     def getTo(self, indice):
         self.__indiceIsToLong(indice)
         current = self.__goTo(indice)
-        print(current)
+        return current
 
     def insertTo(self, value, indice):
         self.__indiceIsToLong(indice)
@@ -81,7 +81,7 @@ class LinkedList:
             current = self.__goTo(indice - 1)
             if indice == self.size:
                 current.next = None
-                self.last == current
+                self.last = current
             else:
                 current.next = current.next.next
         self.size -= 1
@@ -105,16 +105,16 @@ if __name__ == "__main__":
     linkedList1.insert(5)
     linkedList1.insert(6)
     linkedList1.insert(7)
-    linkedList1.sizeOf()
+    print(linkedList1.sizeOf())
     print(linkedList1)
-    linkedList1.getTo(2)
+    print(linkedList1.getTo(2))
     linkedList1.insertTo(8, 1)
     print(linkedList1)
     linkedList1.insertTo(9, 4)
     print(linkedList1)
     linkedList1.insertTo(10, 3)
     print(linkedList1)
-    linkedList1.sizeOf()
+    print(linkedList1.sizeOf())
     linkedList1.deleteTo(2)
     print(linkedList1)
     linkedList1.deleteTo(1)
@@ -130,4 +130,4 @@ if __name__ == "__main__":
         print("La liste est bien vide")
     else:
         print("La liste n'est pas vide")
-    linkedList1.sizeOf()
+    print(linkedList1.sizeOf())
