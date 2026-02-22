@@ -1,6 +1,8 @@
+from typing import Any
+
 class LinkedList:
     class Node:
-        def __init__(self, value: any, next: "Node" = None) -> None:
+        def __init__(self, value: Any, next: "LinkedList.Node | None" = None) -> None:
             self.value = value
             self.next = next
 
@@ -9,7 +11,7 @@ class LinkedList:
                 return f"{self.value}->"
             return f"{self.value}"
 
-        def setNext(self, next: "Node") -> None:
+        def setNext(self, next: "LinkedList.Node") -> None:
             self.next = next
 
     def __init__(self) -> None:
@@ -29,7 +31,7 @@ class LinkedList:
     def sizeOf(self) -> None:
         print(f"{self.size}")
 
-    def insert(self, value: any) -> None:
+    def insert(self, value: Any) -> None:
         nodeLast = self.Node(value)
         if self.size == 0:
             self.first = nodeLast
