@@ -100,6 +100,38 @@ class LinkedList:
         return True
 
 
+class Train(LinkedList):
+    def __init__(self, nbr_of_car: int = 4) -> None:
+        super().__init__()
+        self.nbr_of_car = nbr_of_car
+        self.__generationTrain()
+
+    def __generationTrain(self) -> None:
+        for i in range(self.nbr_of_car):
+            self.insertTo(0, i)
+            
+    def board(self, indice) -> None:
+        for i in range(indice, self.nbr_of_car + 1):
+            car_density = self.getTo(i)
+            if car_density.value < 4:
+                car_density.value += 1
+                return self
+
+        return "Il n'y a plus de place dans le train"
+    
+    def aboard(self, indice) -> None:
+        car_density = self.getTo(indice)
+        if car_density.value > 0:
+           car_density.value -= 1
+           print(self)
+        else:
+            print(f"Il n'y a déjà plus personne dan le wagon n°{indice}")
+            
+
+        
+        
+
+
 if __name__ == "__main__":
     linkedList1 = LinkedList()
     linkedList1.insert(5)
@@ -131,3 +163,25 @@ if __name__ == "__main__":
     else:
         print("La liste n'est pas vide")
     print(linkedList1.sizeOf())
+
+    print("")
+    print("----Train------")
+    print("")
+
+    train1 = Train()
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    print(train1.board(2))
+    
+    train1.aboard(3)
+    train1.aboard(1)
