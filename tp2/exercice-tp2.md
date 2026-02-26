@@ -75,8 +75,27 @@ $  1 + 12 n^3$
 
 Ce qui donne $ O(n^3)$
 
+## Exercice 2. Classement par vitesse de croissance asymptotique
 
+#### *Functions to Class*
+$
+f_1 = 2n\\
+f_2 = log(log(n))\\
+f_3 = n^3 + log(n)\\
+f_4 = log(n)\\
+f_5 = n - n^2 + 5n^3\\
+f_6 = 2^{n-1}\\
+f_7 = n^2\\
+f_8 = n^3\\
+f_9 = nlog(n)\\
+f_{10} = (log(n))^2\\
+f_{11} = \sqrt{n}\\
+f_{12} =6\\
+f_{13} = n!\\
+f_{14} = n\\
+f_{15} = (3 / 2)^n\\
+$
 
+#### *Réponse*:
 
-
-
+$f_{12} = O (f_2),\ f_2 = O(f_4),\ f_4 = O (f_{10}),  $    
