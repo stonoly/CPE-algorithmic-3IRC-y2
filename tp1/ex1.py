@@ -110,14 +110,16 @@ class Train(LinkedList):
         for i in range(self.nbr_of_car):
             self.insertTo(0, i)
             
-    def board(self, indice) -> None:
+    def board(self, indice) -> bool:
         for i in range(indice, self.nbr_of_car + 1):
             car_density = self.getTo(i)
             if car_density.value < 4:
                 car_density.value += 1
-                return self
+                print(self)
+                return True
 
-        return "Il n'y a plus de place dans le train"
+        print(f"Il n'y a plus de place dans le wagon n°{indice} et les suivants")
+        return False
     
     def aboard(self, indice) -> None:
         car_density = self.getTo(indice)
@@ -127,6 +129,12 @@ class Train(LinkedList):
         else:
             print(f"Il n'y a déjà plus personne dan le wagon n°{indice}")
             
+    def boardFront(self, indice):
+        first_board = self.board(indice)
+        if not first_board:
+            second_board = self.board(1)
+            if not second_board:
+                print("Il n'as pas été possible de monté dans le train")
 
         
         
@@ -169,19 +177,24 @@ if __name__ == "__main__":
     print("")
 
     train1 = Train()
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    print(train1.board(2))
-    
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
+    train1.board(2)
     train1.aboard(3)
     train1.aboard(1)
+    
+    
+    print("---------------")
+    print()
+    train1.boardFront(4)
+    
