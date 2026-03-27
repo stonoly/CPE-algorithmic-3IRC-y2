@@ -1,5 +1,9 @@
 # TP4 - Arbres
 
+Global: 
+
+`printTree.py`
+
 ## Exercice 1 - Arbre binaire de recherche
 ### Question 1: 
 > Sur une feuille, représentez l’arbre binaire de recherche obtenu à lorsqu’on insère, dans cet ordre, les nombres : 25, 60, 35, 10, 5, 20, 65, 45, 70, 40, 50, 55, 30 et 15.
