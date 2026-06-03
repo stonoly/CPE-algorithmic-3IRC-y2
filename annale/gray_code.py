@@ -1,11 +1,11 @@
-def gray_code_generator(n: int) -> [string]:
+def gray_code_generator(n: int) -> [str]:
     if n <= 1:
         return ['0', '1']
 
     else:
         tab_jedi = gray_code_generator(n - 1)
         tab_sith = tab_jedi[::-1] 
-        
+
         for j, jedi in enumerate(tab_jedi):
             tab_jedi[j] = '0' + jedi
 
